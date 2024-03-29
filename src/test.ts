@@ -97,7 +97,8 @@ function saveDictionaryAsJSON(dictionary: Record<string, any>, baseMint: PublicK
         console.log("Pool base vault is sol")
         return
     }
-    const fileName = `new_pools/${baseMint.toString()}_poolInfo.json`;  // Using baseMint as part of the file name
+    const fileName = `
+    /${baseMint.toString()}_poolInfo.json`;  // Using baseMint as part of the file name
     const jsonContent = JSON.stringify(dictionary, null, 2);
 
     fs.writeFileSync(fileName, jsonContent, 'utf-8');
